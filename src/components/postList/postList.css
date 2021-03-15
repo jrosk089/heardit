@@ -1,0 +1,31 @@
+.post-list {
+    position: relative;
+    background-color: white;
+    width: 50%;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+}
+
+#post {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 50%;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+#post-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-subreddit {
+    color: red;
+}
+
+#post-footer {
+    display: flex;
+    justify-content: space-between;
+}
