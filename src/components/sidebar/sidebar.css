@@ -1,8 +1,22 @@
-.sidebar {
+#sidebar {
+    position: relative;
     border: 1px solid black;
+    width: 20%;
     height: 50vh;
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: rgb(32, 32, 32);
     color: white;
+}
+
+#sidebar li {
+    background-color: rgb(58, 58, 58);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    list-style: none;
+}
+
+#sidebar li:hover {
+    background-color: gray;
 }

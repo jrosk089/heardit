@@ -1,17 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './sidebar.css';
 
 export const Sidebar = () => {
+    const subreddits = useSelector(state => state.subreddits);
     return (
-        <nav className="sidebar">
-            <h2>This would be a sidebar</h2>
+        <div id="sidebar">
+            <h2>Subreddits</h2>
             <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-                <li>Item 5</li>
+                {subreddits.map(subreddit => <li>{subreddit}</li>)}
             </ul>
-        </nav>
+        </div>
     )
 };

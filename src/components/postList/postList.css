@@ -10,10 +10,18 @@
 
 #post {
     border: 1px solid black;
+    border-radius: 10%;
     padding: 1rem;
     width: 50%;
     text-align: center;
     margin: 1rem auto;
+    scale: 1;
+    transition: 0.4s ease-out;
+}
+
+#post:hover {
+    scale: 1.05;
+    box-shadow: 5px 5px 5px gray;
 }
 
 #post-header {
