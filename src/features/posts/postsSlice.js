@@ -55,4 +55,6 @@ export const postsSlice = createSlice({
     ]
 });
 
+
+export const { filterPosts } = postsSlice.actions;
 export default postsSlice.reducer;
