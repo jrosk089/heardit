@@ -9,7 +9,10 @@ export const postsSlice = createSlice({
         text: 'This is the first pretend post',
         upvotes: 100,
         comments: [
-            'Comment 1', 'Comment 2', 'Comment 3', 'Comment 4'
+            { author: 'Author1', text: 'Comment 1' }, 
+            { author: 'Author2', text: 'Comment 2' }, 
+            { author: 'Author3', text: 'Comment 3' }, 
+            { author: 'Author4', text: 'Comment 4' }
         ]
     },
     {
@@ -19,7 +22,9 @@ export const postsSlice = createSlice({
         text: 'This is the second pretend post',
         upvotes: 200,
         comments: [
-            'Comment 1', 'Comment 2', 'Comment 3',
+            { author: 'Author1', text: 'Comment 1' }, 
+            { author: 'Author2', text: 'Comment 2' }, 
+            { author: 'Author3', text: 'Comment 3' },
         ]
     },
     {
@@ -29,7 +34,10 @@ export const postsSlice = createSlice({
         text: 'This is the third pretend post',
         upvotes: 300,
         comments: [
-            'Comment 1', 'Comment 2', 'Comment 3', 'Comment 4'
+            { author: 'Author1', text: 'Comment 1' }, 
+            { author: 'Author2', text: 'Comment 2' }, 
+            { author: 'Author3', text: 'Comment 3' }, 
+            { author: 'Author4', text: 'Comment 4' }
         ]
     },
     {
@@ -39,7 +47,8 @@ export const postsSlice = createSlice({
         text: 'This is the fourth pretend post',
         upvotes: 400,
         comments: [
-            'Comment 1', 'Comment 2', 'Comment 3', 'Comment 4', 'Comment 5'
+            { author: 'Author1', text: 'Comment 1' }, 
+            { author: 'Author2', text: 'Comment 2' }
         ]
     },
     {
@@ -49,7 +58,7 @@ export const postsSlice = createSlice({
         text: 'This is the fifth pretend post',
         upvotes: 300,
         comments: [
-            'Comment 1'
+            { author: 'Author1', text: 'Comment 1' } 
         ]
     }
     ]

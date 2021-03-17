@@ -1,3 +1,13 @@
 a {
     text-decoration: none;
 }
+
+#post img {
+    width: 80%;
+    border: 1px solid black;
+}
+
+#post-footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
