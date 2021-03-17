@@ -1,16 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadPosts } from './postsSlice';
 import { SimplePost } from './SimplePost';
 
 export const Posts = () => {
-    const posts = useSelector(state => state.posts);
-    const selectedSubreddit = useSelector(state => state.selectedSubreddit);
+    const dispatch = useDispatch();
+    const posts = useSelector(state => state.posts.data);
+    const loading = useSelector(state => state.posts.isLoadingPosts);
+    const subreddit = useSelector(state => state.selectedSubreddit);
 
-    const filteredPosts = (selectedSubreddit.length > 0) ? posts.filter(post => post.subreddit === selectedSubreddit) : posts;
+    useEffect(() => { dispatch(loadPosts(subreddit))}, [dispatch, subreddit]);
+
+    if (loading) { return <h2>Loading</h2> };
 
     return (
         <div className="posts-container">
-            {(posts.length < 1) ? 'No posts :(' : filteredPosts.map(post => {
+            {(posts.length < 1) ? 'No posts :(' : posts.map(post => {
                 return <SimplePost post={post} key={post.id} />
             })}
         </div>
