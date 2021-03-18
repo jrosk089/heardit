@@ -1,7 +1,6 @@
 import React from 'react';
 import './simplePost.css';
 import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 
 export const SimplePost = ({ post }) => {
     const { subreddit, title, text, embedId, upvotes, numComments, id } = post;
@@ -13,7 +12,7 @@ export const SimplePost = ({ post }) => {
                 <h2 id="post-subreddit">r/{subreddit}</h2>
                 <h2 id="post-title">{title}</h2>
             </div>
-            <p id="post-text"><ReactMarkdown>{text}</ReactMarkdown></p>
+            <p id="post-text">{text}</p>
             <iframe
                 width="400"
                 height="250"
