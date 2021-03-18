@@ -3,13 +3,12 @@ import './simplePost.css';
 import { Link } from 'react-router-dom';
 
 export const SimplePost = ({ post }) => {
-    const { subreddit, title, text, embedId, upvotes, numComments, id } = post;
+    const { title, text, embedId, upvotes, numComments, id } = post;
 
     return (
         <div id="post">
             <Link to={`/${id}`} style={{'textDecoration': 'none'}}>
             <div id="post-header">
-                <h2 id="post-subreddit">r/{subreddit}</h2>
                 <h2 id="post-title">{title}</h2>
             </div>
             <p id="post-text">{text}</p>

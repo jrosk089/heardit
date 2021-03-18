@@ -21,3 +21,8 @@
     background-color: gray;
     cursor: pointer;
 }
+
+#sidebar .selected {
+    background-color: black;
+    color: white;
+}

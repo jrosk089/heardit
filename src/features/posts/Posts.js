@@ -15,6 +15,7 @@ export const Posts = () => {
 
     return (
         <div className="posts-container">
+            <h2 className="subreddit">r/{subreddit}</h2>
             {(posts.length < 1) ? 'No posts :(' : posts.map(post => {
                 return <SimplePost post={post} key={post.id} />
             })}
