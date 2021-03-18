@@ -28,7 +28,8 @@ export const commentsSlice = createSlice({
             state.data = commentObjs.map(item => {
                 return {
                     author: item.data.author,
-                    body: item.data.body
+                    body: item.data.body,
+                    id: item.data.id
                 }
             })
         },

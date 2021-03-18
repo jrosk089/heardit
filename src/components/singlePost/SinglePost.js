@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { loadComments } from '../../features/comments/commentsSlice';
-
+import { Comment } from '../comment/Comment';
 import './singlePost.css';
 
 export const SinglePost = ({ match }) => {
@@ -21,7 +20,6 @@ export const SinglePost = ({ match }) => {
             <h2>{title}</h2>
             <h3>{subreddit}</h3>
             <p>{text}</p>
-            <p>{id}</p>
             <iframe
                 width="400"
                 height="250"
@@ -34,14 +32,7 @@ export const SinglePost = ({ match }) => {
             <p>Upvotes: {upvotes}</p>
             { isLoadingComments ? 
             <p>Loading...</p> :
-            data.map(item => {
-                return (
-                <div className="individual-comment">
-                    <h4>Author: {item.author}</h4>
-                    <p><ReactMarkdown>{item.body}</ReactMarkdown></p>
-                </div>
-                )
-            }) 
+            data.map(comment => <Comment comment={comment} key={comment.id} />) 
             }
             <p><Link to="/">Back</Link></p>
         </article>
