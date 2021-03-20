@@ -12,15 +12,17 @@ export const SimplePost = ({ post }) => {
                 <h2 id="post-title">{title}</h2>
             </div>
             <p id="post-text">{text}</p>
-            <iframe
-                width="400"
-                height="250"
-                src={`https://www.youtube.com/embed/${embedId}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-            />
+            <div id="iframe-container">
+                <iframe
+                    width="400"
+                    height="250"
+                    src={`https://www.youtube.com/embed/${embedId}`}
+                    frameBorder="0"
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Embedded youtube"
+                />
+            </div>
             <div id="post-footer">
                 <span id="post-upvotes">Upvotes: {upvotes}</span>
                 <span id="post-comment-num">Comments: {numComments}</span>

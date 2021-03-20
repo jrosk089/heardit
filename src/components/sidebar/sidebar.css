@@ -1,28 +1,27 @@
 #sidebar {
-    position: relative;
-    border: 1px solid black;
-    width: 20%;
-    height: 40%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: rgb(32, 32, 32);
-    color: white;
+    position: fixed;
+    right: 1.5rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 15%;
+    height: 60%;
+    padding: 1rem;
+    background-color: #c5ceee;
 }
 
 #sidebar li {
-    background-color: rgb(58, 58, 58);
-    border-radius: 20px;
+    background-color: #ADBAEB;
+    border-radius: 10px;
     padding: 1rem;
     margin-bottom: 0.5rem;
     list-style: none;
 }
 
 #sidebar li:hover {
-    background-color: gray;
+    background-color: #5CD6BE;
     cursor: pointer;
 }
 
 #sidebar .selected {
-    background-color: black;
-    color: white;
+    background-color: #68D65C;
 }

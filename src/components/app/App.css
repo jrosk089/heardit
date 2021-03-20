@@ -1,4 +1,5 @@
 .content {
+    background-color: white;
     display: flex;
     justify-content: space-around;
     padding-top: 4rem;

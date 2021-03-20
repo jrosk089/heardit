@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadPosts } from './postsSlice';
 import { SimplePost } from './SimplePost';
 
+import { Loading } from '../../components/loading/Loading';
+
 export const Posts = () => {
     const dispatch = useDispatch();
     const posts = useSelector(state => state.posts.data);
@@ -11,7 +13,7 @@ export const Posts = () => {
 
     useEffect(() => { dispatch(loadPosts(subreddit))}, [dispatch, subreddit]);
 
-    if (loading) { return <h2>Loading</h2> };
+    if (loading) { return <Loading /> };
 
     return (
         <div className="posts-container">
