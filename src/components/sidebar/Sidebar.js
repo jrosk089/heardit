@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { selectedSubreddit } from '../../features/subreddits/selectedSubredditSlice';
 
 import './sidebar.css';
@@ -14,12 +16,14 @@ export const Sidebar = () => {
             <h2>Subreddits</h2>
             <ul>
                 {subreddits.map(subreddit => 
+                <Link to="/">
                 <li key={subreddit} 
                     onClick={() => dispatch(selectedSubreddit({subreddit}))}
                     className={(subreddit === selectedSub) ? 'selected' : 'unselected'}
                     >
                     {subreddit}
-                </li>)}
+                </li>
+                </Link>)}
             </ul>
         </div>
     )

@@ -16,11 +16,13 @@ export const Posts = () => {
     if (loading) { return <Loading /> };
 
     return (
-        <div className="posts-container">
+        <div className="posts">
             <h2 className="subreddit">r/{subreddit}</h2>
+            <div className="posts-container">
             {(posts.length < 1) ? 'No posts :(' : posts.map(post => {
                 return <SimplePost post={post} key={post.id} />
             })}
+            </div>
         </div>
     )
 };

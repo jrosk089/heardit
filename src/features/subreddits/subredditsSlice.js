@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const subredditsSlice = createSlice({
     name: 'subreddits',
     initialState: [
-        'listentothis', 'music', 'jazz', 'classicalmusic', 'folkmusic'
+        'listentothis', 'music', 'classicalmusic', 'contemporary', 'Rap', 'Rock', 'metal', 'jazz', 'WorldMusic'
     ],
 
 });

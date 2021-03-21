@@ -1,5 +1,52 @@
-a {
-    text-decoration: none;
+#post {
+    background-color: #e6eafc;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
+    padding: 1rem;
+    width: 400px;
+    text-align: center;
+    margin: 1rem auto;
+    scale: 1;
+    transition: 0.4s ease-out;
+}
+
+#post:hover {
+    scale: 0.99;
+    box-shadow: 1px 1px 1px gray;
+}
+
+#post a {
+    color: darkblue;
+}
+
+#post a:hover {
+    color: #5CD6BE;
+}
+
+#post-author {
+    font-size: 0.8rem;
+}
+
+#post-upvotes, #post-comments {
+    background-color: #ADBAEB;
+    padding: 0 0.6rem;
+    border-radius: 8px;
+}
+
+#back {
+    position: absolute;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+#post-footer {
+    width: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 #post img {
@@ -7,15 +54,10 @@ a {
     border: 1px solid black;
 }
 
-#post-footer {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
 #iframe-container {
     position: relative;
     margin: 0 auto;
     background-color: blue;
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
 }

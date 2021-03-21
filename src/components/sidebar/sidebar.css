@@ -1,10 +1,22 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
 #sidebar {
     position: fixed;
     right: 1.5rem;
-    border: 1px solid lightgray;
     border-radius: 10px;
-    width: 15%;
-    height: 60%;
+    width: 20%;
+    height: 65%;
     padding: 1rem;
     background-color: #c5ceee;
 }
@@ -12,16 +24,24 @@
 #sidebar li {
     background-color: #ADBAEB;
     border-radius: 10px;
-    padding: 1rem;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
+    padding: 0.5rem;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
     list-style: none;
+    transition: all 0.3s;
 }
 
 #sidebar li:hover {
     background-color: #5CD6BE;
     cursor: pointer;
+    box-shadow: 0px 0px 0px gray;
 }
 
 #sidebar .selected {
-    background-color: #68D65C;
+    background-color: #5CD6BE;
+    box-shadow: 0px 0px 0px gray;
+    border: 1px solid black;
+    transform: translate(-20px);
 }

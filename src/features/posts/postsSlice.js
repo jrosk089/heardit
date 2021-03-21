@@ -27,6 +27,7 @@ export const postsSlice = createSlice({
             .map(item => {
                 return {
                     id: item.data.id,
+                    author: item.data.author,
                     subreddit: item.data.subreddit,
                     title: item.data.title,
                     text: item.data.selftext,

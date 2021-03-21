@@ -1,43 +1,22 @@
 .post-list {
     position: relative;
     background-color: white;
-    width: 50%;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid black;
+    width: 75%;
+    left: 2rem;
 }
 
 .subreddit {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
     text-align: center;
+    color: #5CD6BE;
+    font-size: 2rem;
+    background-color: black;
+    border-radius: 8px;
 }
 
-#post {
-    border: 1px solid black;
-    border-radius: 10%;
-    padding: 1rem;
-    width: 80%;
-    text-align: center;
-    margin: 1rem auto;
-    scale: 1;
-    transition: 0.4s ease-out;
-}
-
-#post:hover {
-    scale: 1.01;
-    box-shadow: 5px 5px 5px gray;
-}
-
-#post-header {
+.posts-container {
     display: flex;
-    justify-content: space-between;
-}
-
-#post-subreddit {
-    color: red;
-}
-
-#post-footer {
-    display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }

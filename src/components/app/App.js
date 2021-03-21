@@ -1,18 +1,21 @@
 import './App.css';
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from '../header/Header';
 import { PostList } from '../postList/PostList';
 import { Sidebar } from '../sidebar/Sidebar';
 
 function App() {
   return (
-    <main>
+    <Router>
+    <section>
       <Header />
-      <section className="content">
+      <main className="content">
         <PostList />
         <Sidebar />
-      </section>
-    </main>
+      </main>
+    </section>
+    </Router>
   );
 }
 
