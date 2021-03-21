@@ -25,8 +25,8 @@ export const SinglePost = ({ match }) => {
             <p>posted by {author}</p>
             <p>{text}</p>
             <iframe
-                width="400"
-                height="300"
+                width="50%"
+                height="250"
                 src={`https://www.youtube.com/embed/${embedId}`}
                 frameBorder="0"
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"

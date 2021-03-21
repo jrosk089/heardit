@@ -56,3 +56,13 @@
     background-color: black;
     color: #5CD6BE;
 }
+
+@media only screen and (max-width: 450px) {
+    #single-post h3 {
+        width: 80%;
+    }
+
+    .individual-comment {
+        width: 90%;
+    }
+}
