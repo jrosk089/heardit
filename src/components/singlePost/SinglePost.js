@@ -33,7 +33,7 @@ export const SinglePost = ({ match }) => {
                 allowFullScreen
                 title="Embedded youtube"
             />
-            <p><FontAwesomeIcon icon={faArrowUp} />{upvotes}</p>
+            <p><FontAwesomeIcon icon={faArrowUp} /> {upvotes}</p>
             { isLoadingComments ? 
             <p>Loading...</p> :
             data.map(comment => <Comment comment={comment} key={comment.id} />) 

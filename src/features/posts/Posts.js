@@ -9,11 +9,13 @@ export const Posts = () => {
     const dispatch = useDispatch();
     const posts = useSelector(state => state.posts.data);
     const loading = useSelector(state => state.posts.isLoadingPosts);
+    const failed = useSelector(state => state.posts.failedToLoadPosts);
     const subreddit = useSelector(state => state.selectedSubreddit);
 
     useEffect(() => { dispatch(loadPosts(subreddit))}, [dispatch, subreddit]);
 
     if (loading) { return <Loading /> };
+    if (failed) { return <p style={{textAlign: 'center'}}>Oh no! Something went wrong :( Try another subreddit?</p>}
 
     return (
         <div className="posts">
