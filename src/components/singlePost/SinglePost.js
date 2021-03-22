@@ -13,7 +13,9 @@ export const SinglePost = ({ match }) => {
     const post = useSelector(state => state.posts.data.find(post => post.id === match.params.id));
     const { subreddit, title, author, text, embedId, upvotes, id } = post;
 
-    useEffect(() => { dispatch(loadComments({subreddit, id}))}, [dispatch, subreddit, id]);
+    useEffect(() => {
+        dispatch(loadComments({subreddit, id}))
+    }, [dispatch, post, subreddit, id]);
 
     const { isLoadingComments, data } = useSelector(state => state.comments);
 
@@ -24,15 +26,17 @@ export const SinglePost = ({ match }) => {
             <h3>r/{subreddit}</h3>
             <p>posted by {author}</p>
             <p>{text}</p>
-            <iframe
-                width="50%"
-                height="250"
-                src={`https://www.youtube.com/embed/${embedId}`}
-                frameBorder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-            />
+            <div id="iframe-container">
+                <iframe
+                    width="300"
+                    height="200"
+                    src={`https://www.youtube.com/embed/${embedId}`}
+                    frameBorder="0"
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Embedded youtube"
+                />
+            </div>
             <p><FontAwesomeIcon icon={faArrowUp} /> {upvotes}</p>
             { isLoadingComments ? 
             <p>Loading...</p> :

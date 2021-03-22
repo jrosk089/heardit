@@ -1,13 +1,15 @@
+import './sidebar.css';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { selectedSubreddit } from '../../features/subreddits/selectedSubredditSlice';
 
-import './sidebar.css';
+import { SearchBar } from '../../features/searchBar/SearchBar';
 
 export const Sidebar = () => {
     const dispatch = useDispatch();
+    
     const subreddits = useSelector(state => state.subreddits);
     const selectedSub = useSelector(state => state.selectedSubreddit);
 
@@ -25,6 +27,7 @@ export const Sidebar = () => {
                 </li>
                 </Link>)}
             </ul>
+            <SearchBar />
         </div>
     )
 };

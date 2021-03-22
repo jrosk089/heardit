@@ -13,12 +13,14 @@ a:hover {
 
 #sidebar {
     position: fixed;
+    top: 9rem;
     right: 1.5rem;
     border-radius: 10px;
     width: 17%;
-    height: 65%;
+    height: 70%;
     padding: 1rem;
     background-color: #c5ceee;
+    font-size: 0.7rem;
 }
 
 #sidebar li {
@@ -44,6 +46,28 @@ a:hover {
     box-shadow: 0px 0px 0px gray;
     border: 1px solid black;
     transform: translate(-20px);
+}
+
+#search-bar {
+    text-align: right;
+}
+
+#search-input {
+    background-color: #ADBAEB;
+    border: 1px solid blue;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+#search-button {
+    background-color: #ADBAEB;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+
+#search-button:hover {
+    background-color: #5CD6BE;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 850px) {
