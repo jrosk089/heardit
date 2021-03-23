@@ -6,6 +6,8 @@ export const SearchBar = () => {
     const dispatch = useDispatch();
     const [searchTerm, setSearchTerm] = useState('');
 
+    const sidebar = document.getElementById('sidebar');
+
     const handleTextChange = ({target}) => {
         setSearchTerm(target.value)
     };
@@ -14,6 +16,9 @@ export const SearchBar = () => {
         e.preventDefault();
         dispatch(setSearch(searchTerm));
         setSearchTerm('');
+        if (sidebar.style.display === 'block'){
+            sidebar.style.display = 'none'
+        }
     };
 
     return (
