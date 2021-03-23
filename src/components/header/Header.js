@@ -23,7 +23,7 @@ export const Header = () => {
                 <h1>Heardit</h1>
                 <h2>Find new music with Reddit</h2>
             </div>
-            <button id="nav" onClick={showNav}><FontAwesomeIcon icon={faBars} /></button>
+            <button id="nav" aria-label="Choose Subreddits" onClick={showNav}><FontAwesomeIcon icon={faBars} /></button>
         </div>
     )
 };
