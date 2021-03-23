@@ -13,7 +13,7 @@ export const Posts = () => {
     const loading = useSelector(state => state.posts.isLoadingPosts);
     const failed = useSelector(state => state.posts.failedToLoadPosts);
     const subreddit = useSelector(state => state.selectedSubreddit);
-    const searchBar = useSelector(state => state.searchBar);
+    const searchTerm = useSelector(state => state.searchTerm);
 
     useEffect(() => { dispatch(loadPosts(subreddit))}, [dispatch, subreddit]);
 
@@ -24,13 +24,13 @@ export const Posts = () => {
     if (loading) { return <Loading /> };
     if (failed) { return <p style={{textAlign: 'center'}}>Oh no! Something went wrong :( Try another subreddit?</p>};
 
-    if (searchBar) {
-        const filteredPosts = posts.filter(post => post.title.includes(searchBar));
+    if (searchTerm) {
+        const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
         return (
             <div className="posts">
             <h2 className="subreddit">r/{subreddit}</h2>
-            <p style={{textAlign: 'center'}}>Search results for "{searchBar}"</p>
+            <p style={{textAlign: 'center'}}>Search results for "{searchTerm}"</p>
             <div className="posts-container">
             {(filteredPosts.length < 1) ? 
                 <div>

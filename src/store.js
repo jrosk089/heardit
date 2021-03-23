@@ -12,6 +12,6 @@ export default configureStore({
         subreddits: subredditsReducer,
         selectedSubreddit: selectedSubredditReducer,
         comments: commentsReducer,
-        searchBar: searchBarReducer
+        searchTerm: searchBarReducer
     }
 });

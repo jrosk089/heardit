@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const searchBarSlice = createSlice({
-    name: 'searchBar',
+    name: 'searchTerm',
     initialState: '',
     reducers: {
         setSearch: (state, action) => (state = action.payload),
