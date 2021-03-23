@@ -31,16 +31,15 @@
 
 @media only screen and (max-width: 850px) {
     #loading-container {
-        top: -1rem;
-        background: url('../../images/staff.png') center/250% no-repeat;
-        height: 100px;
-        margin-bottom: 0;
+        position: static;
+        background: url('../../images/staff.png') center/100% no-repeat;
+        height: 200px;
+        margin-top: 1rem;
     }
 }
 
 @media only screen and (max-width: 450px) {
     #loading-container {
-        top: 1rem;
         background: url('../../images/staff.png') center/150% no-repeat;
         height: 100px;
         margin-bottom: 0;
