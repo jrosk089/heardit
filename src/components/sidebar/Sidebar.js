@@ -12,6 +12,8 @@ export const Sidebar = () => {
     
     const subreddits = useSelector(state => state.subreddits);
     const selectedSub = useSelector(state => state.selectedSubreddit);
+    
+    const sidebar = document.getElementById('sidebar');
 
     return (
         <div id="sidebar">
@@ -20,7 +22,12 @@ export const Sidebar = () => {
                 {subreddits.map(subreddit => 
                 <Link to="/">
                 <li key={subreddit} 
-                    onClick={() => dispatch(selectedSubreddit({subreddit}))}
+                    onClick={() => {
+                        dispatch(selectedSubreddit({subreddit}));
+                        if (sidebar.style.display === 'block'){
+                            sidebar.style.display = 'none'
+                        }
+                    }}
                     className={(subreddit === selectedSub) ? 'selected' : 'unselected'}
                     >
                     {subreddit}
