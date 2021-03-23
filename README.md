@@ -21,9 +21,9 @@ My take on this idea was to make a Web App that allowed users to choose from a n
 
 ### Full-Screen (Monitor)
 
-![screenshot 1](./readmeimages/fullscreen.png)
+![screenshot 1](./readme-images/fullscreen.png)
 
 ### Mobile
 
-![screenshot 2](./readmeimages/mobile1.png)
-![screenshot 3](./readmeimages/mobile3.png)
+![screenshot 2](./readme-images/mobile1.png)
+![screenshot 3](./readme-images/mobile3.png)
