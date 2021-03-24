@@ -1,10 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const loadPosts = createAsyncThunk('posts/loadPosts', async ( subreddit ) => {
-    const response = await fetch(`https://www.reddit.com/r/${subreddit}/hot.json`);
-    const json = await response.json();
+export const loadPosts = createAsyncThunk('posts/loadPosts', async ( subreddit, {rejectWithValue} ) => {
+    try {
+        const response = await fetch(`https://www.reddit.com/r/${subreddit}/hot.json`);
+        const json = await response.json();
 
-    return json
+        return json
+    } catch(error) { 
+        return rejectWithValue(error)}
 });
 
 export const postsSlice = createSlice({
@@ -22,7 +25,7 @@ export const postsSlice = createSlice({
         [loadPosts.fulfilled]: (state, action) => {
             state.isLoadingPosts = false;
             state.failedToLoadPosts = false;
-            state.data = action.payload.data.children
+            state.data = (action.payload.data !== undefined) ? action.payload.data.children
             .filter(item => item.data.domain === 'youtu.be' || item.data.domain === 'youtube.com')
             .map(item => {
                 return {
@@ -37,7 +40,7 @@ export const postsSlice = createSlice({
                     upvotes: item.data.ups,
                     numComments: item.data.num_comments
                 }
-            })
+            }) : 'failed';
         },
         [loadPosts.rejected]: (state) => {
             state.isLoadingPosts = false;

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
+
 import { loadPosts } from './postsSlice';
 import { SimplePost } from './SimplePost';
 import { setSearch } from '../searchBar/searchBarSlice';
@@ -15,14 +17,18 @@ export const Posts = () => {
     const subreddit = useSelector(state => state.selectedSubreddit);
     const searchTerm = useSelector(state => state.searchTerm);
 
-    useEffect(() => { dispatch(loadPosts(subreddit))}, [dispatch, subreddit]);
+    useEffect(() => { 
+        dispatch(loadPosts(subreddit))
+        .then(unwrapResult)
+        .catch(error => { console.log('This subreddit seems to be private. Oh no.') })
+    }, [dispatch, subreddit]);
 
     const resetSearch = () => {
         dispatch(setSearch(''));
     };
 
     if (loading) { return <Loading /> };
-    if (failed) { return <p style={{textAlign: 'center'}}>Oh no! Something went wrong :( Try another subreddit?</p>};
+    if (failed || posts === 'failed') { return <p style={{textAlign: 'center'}}>Oh no! Something went wrong :( Try another subreddit?</p>};
 
     if (searchTerm) {
         const filteredPosts = posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
