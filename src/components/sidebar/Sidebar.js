@@ -20,13 +20,14 @@ export const Sidebar = () => {
             <h2>Subreddits</h2>
             <ul>
                 {subreddits.map(subreddit => 
-                <Link to="/">
-                <li key={subreddit} 
-                    onClick={() => {
+                <Link key={subreddit} to="/">
+                <li onClick={() => {
                         dispatch(selectedSubreddit({subreddit}));
-                        if (sidebar.style.display === 'block'){
-                            sidebar.style.display = 'none'
-                        }
+                        if (sidebar.style.display !== null){
+                            if (sidebar.style.display === 'block'){
+                                sidebar.style.display = 'none'
+                            }
+                        }   
                     }}
                     className={(subreddit === selectedSub) ? 'selected' : 'unselected'}
                     >
